@@ -19,11 +19,11 @@ dd <- d %>%
   pivot_wider(names_from = series_id, values_from = value) #%>% 
   # mutate(total_co2 = (430 * PAEIP) + (1810 * CLEIP) + (54.8 * NGEIP))
 
-dd <- full_join(p, df, by = c("state" = "location", "year"))
+dd <- full_join(p, dd, by = c("state" = "location", "year"))
 
 dd <- left_join(e, dd, by = c("state", "year"))
 
 data <- filter(dd, year == 2018)
 
-g <- ggplot(data) +
-  geom_point(aes(x = NGEID, y = emissions))
+# g <- ggplot(data = dd) +
+#   geom_point(mapping = aes(x = ))

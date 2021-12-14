@@ -4,7 +4,7 @@ library(tidyverse)
 library(here)
 
 get_data <- function() {
-  d <- read_csv(here("data_clean", "data_clean.csv"))
+  d <- read_csv("../data_clean/data_clean.csv")
   return (d)
 }
 
